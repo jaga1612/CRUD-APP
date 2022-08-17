@@ -1,4 +1,3 @@
-import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { post, user } from "../modal";
 
@@ -14,17 +13,19 @@ const SinglePost: React.FC<props> = ({ post, users }) => {
     return user?.name;
   };
   return (
-    <li className="mui--divider-bottom">
+    <li data-testid="post" className="mui--divider-bottom">
       <h1 style={{ textDecoration: "underline", fontWeight: "bold" }}>
         {printUserName(post.userId)}{" "}
         <span>
           <Link
+            data-testid="link"
             to={`delete/${post.id}`}
             className="mui-btn mui-btn--danger mui--pull-right"
           >
             Delete
           </Link>
           <Link
+            data-testid="link"
             to={`/edit/${post.id}`}
             className="mui-btn mui-btn--primary mui--pull-right"
           >
@@ -38,8 +39,4 @@ const SinglePost: React.FC<props> = ({ post, users }) => {
   );
 };
 
-const mapStateToProps = (state: { users: user[]; posts: post[] }) => {
-  return { users: state.users };
-};
-
-export default connect(mapStateToProps)(SinglePost);
+export default SinglePost;

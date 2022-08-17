@@ -36,10 +36,16 @@ const RenderList: React.FC<props> = ({ posts, users }) => {
   const renderPost = () => {
     if (!posts) return null;
 
-    return posts.map((post) => <SinglePost key={post.id} post={post} />);
+    return posts.map((post) => (
+      <SinglePost key={post.id} post={post} users={users} />
+    ));
   };
 
-  return <ul className="mui-list--unstyled ">{renderPost()}</ul>;
+  return (
+    <ul data-testid="list" className="mui-list--unstyled ">
+      {renderPost()}
+    </ul>
+  );
 };
 
 const mapStateToProps = (state: { users: user[]; posts: post[] }) => {

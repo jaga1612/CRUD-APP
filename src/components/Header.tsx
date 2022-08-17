@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
-    <div className="mui-appbar">
+    <div data-testid="Header" className="mui-appbar">
       <table width="100%">
         <tbody>
           <tr>
@@ -10,10 +10,18 @@ const Header: React.FC = () => {
               CRUD APP
             </td>
             <td className="mui--appbar-height" align="right">
-              <Link className="mui-btn mui-btn--primary" to="/">
+              <Link
+                data-testid="link"
+                className="mui-btn mui-btn--primary"
+                to="/"
+              >
                 HOME
               </Link>
-              <Link className="mui-btn mui-btn--primary" to="/create">
+              <Link
+                data-testid="link"
+                className="mui-btn mui-btn--primary"
+                to="/create"
+              >
                 CREATE POST
               </Link>
             </td>
