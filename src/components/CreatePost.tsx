@@ -20,7 +20,7 @@ const CreatPost: React.FC = () => {
         history.push("/");
       } catch (err) {
         console.log(err);
-        console.log(err)
+        console.log("hello");
       }
     };
     postrequest();
