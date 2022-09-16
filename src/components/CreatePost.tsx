@@ -21,6 +21,7 @@ const CreatPost: React.FC = () => {
       } catch (err) {
         console.log(err);
         console.log("hello");
+        console.log("new");
       }
     };
     postrequest();
